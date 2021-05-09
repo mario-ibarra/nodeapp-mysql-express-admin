@@ -1,0 +1,32 @@
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item breadcrumbs__item--first">
+    <a href="/staff">Home</a>
+  </li>
+  <li class="breadcrumbs__item">
+    <a >Edit User</a>
+  </li>
+
+</ul>
+
+{{#if alert }}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="form-wrapper">
+  
+    <form action="/staff/adduser" method="POST"  class="form" id="form" autocomplete="off" enctype="multipart/form-data">  
+
+        {{> user-form}} 
+
+    <button type="submit" class="btn btn-add">Add Employee</button>
+    </form>
+
+ 
+</div>
+
+<script>
+  const alertNotice = document.querySelector('.alert');
+</script>

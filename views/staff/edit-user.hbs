@@ -1,0 +1,27 @@
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item breadcrumbs__item--first">
+    <a href="/staff">Home</a>
+  </li>
+
+  <li class="breadcrumbs__item breadcrumbs__item--last">
+    <a href="/">edit</a>
+  </li>
+</ul>
+
+{{#if alert }}
+<div class="alert alert-success" role="alert">
+  <strong>{{alert}}</strong> 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="form-wrapper">
+    {{#each rows}}
+   <form action="/staff/edituser/{{this.id}}" method="POST">
+        {{> user-form}} 
+        <button class="btn btn-edit" type="submit">Update User</button>
+        <a href="/staff" class="btn btn-cancel">Cancel</a>
+    </form>
+    {{/each}}
+
+  </div> 

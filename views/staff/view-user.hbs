@@ -1,0 +1,61 @@
+<ul class="breadcrumbs mb-5">
+  <li class="breadcrumbs__item breadcrumbs__item--first">
+    <a href="/staff">Home</a>
+  </li>
+  <li class="breadcrumbs__item breadcrumbs__item--last">
+    <a href="#">Single User</a>
+  </li>
+</ul>
+    
+
+<div >
+  {{#each rows}}
+ 
+
+    <div class="row mb-5">
+      <div class="col">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Firs Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">{{this.first_name}}</th>
+              <th scope="col">{{this.last_name}}</th>
+              <th scope="col">{{this.email}}</th>
+              <th scope="col">{{this.phone}}</th>
+              <td class="text-end">
+                <a href="/staff/edituser/{{this.id}}" type="button" class="btn btn-edit"><i class="far fa-edit">Edit</i></a>
+                <a href="/staff/{{this.id}}" type="button" class="btn btn-delete"><i class="fas fa-user-slash"></i>Delete</i></a>
+                <a href="/staff" type="button" class="btn btn-add"><i class="fa fa-users" aria-hidden="true"></i>Go Back</i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="container-card">
+      <div class="cards-staff card_outer">
+        <div class="card-staff">
+          <div class="top image">
+            <a href="#"><img src="../../img/admin.png" alt="card"></a>
+          </div>
+          <div class="bottom content">
+            <small>{{this.first_name}}</small>
+            <p>{{this.comments}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  {{/each}}
+
+</div>
